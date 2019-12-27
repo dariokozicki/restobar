@@ -1,12 +1,12 @@
 import db.EntityManagerHelper;
-import model.Cena;
-import model.Invitado;
-import model.Juntada;
-import model.dinner.Pedido;
-import model.dinner.Platillo;
-import model.personalities.Amigable;
-import model.personalities.Enojon;
-import model.personalities.Personalidad;
+import domain.Cena;
+import domain.Invitado;
+import domain.Juntada;
+import domain.dinner.Pedido;
+import domain.dinner.Platillo;
+import domain.personalities.Amigable;
+import domain.personalities.Enojon;
+import domain.personalities.Personalidad;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

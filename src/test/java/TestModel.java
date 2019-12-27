@@ -1,12 +1,12 @@
-import model.Cena;
-import model.Invitado;
-import model.Juntada;
-import model.dinner.Pedido;
-import model.dinner.Platillo;
-import model.personalities.Alegre;
-import model.personalities.Amigable;
-import model.personalities.Enojon;
-import model.personalities.Tacaño;
+import domain.Cena;
+import domain.Invitado;
+import domain.Juntada;
+import domain.dinner.Pedido;
+import domain.dinner.Platillo;
+import domain.personalities.Alegre;
+import domain.personalities.Amigable;
+import domain.personalities.Enojon;
+import domain.personalities.Tacaño;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

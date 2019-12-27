@@ -1,20 +1,11 @@
-import db.EntityManagerHelper;
-import model.Cena;
-import model.Invitado;
-import model.Juntada;
-import model.dinner.Pedido;
-import model.dinner.Platillo;
-import model.dinner.food.Aperitivo;
-import model.dinner.food.Bebida;
-import model.dinner.food.Comida;
-import model.dinner.food.PlatoPrincipal;
-import model.dinner.food.ingredients.Componente;
-import model.dinner.food.ingredients.Ingrediente;
-import model.dinner.food.ingredients.Propiedad;
-import model.personalities.*;
-import org.junit.jupiter.api.Assertions;
+import domain.dinner.food.Aperitivo;
+import domain.dinner.food.Bebida;
+import domain.dinner.food.Comida;
+import domain.dinner.food.PlatoPrincipal;
+import domain.dinner.food.ingredients.Componente;
+import domain.dinner.food.ingredients.Ingrediente;
+import domain.dinner.food.ingredients.Propiedad;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
