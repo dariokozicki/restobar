@@ -26,4 +26,8 @@ public class RepositorioIngrediente extends Repositorio {
     public Ingrediente buscar(int id) {
         return this.dao.buscar(id);
     }
+    public Ingrediente buscar(String nombre){
+        return this.dao.buscar(nombre);
+    }
+
 }

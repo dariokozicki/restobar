@@ -14,11 +14,14 @@ public class Ingrediente extends EntidadPersistente {
     private Double costo;
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Propiedad> propiedades;
+    @Column(name="path")
+    private String path;
 
-    public Ingrediente(String nombre, Double costo, List<Propiedad> propiedades) {
+    public Ingrediente(String nombre, Double costo, List<Propiedad> propiedades, String path) {
         this.nombre = nombre;
         this.costo = costo;
         this.propiedades = propiedades;
+        this.path = path;
     }
     public Ingrediente(){}
     public double getCosto(){
@@ -42,5 +45,13 @@ public class Ingrediente extends EntidadPersistente {
 
     public void setPropiedades(List<Propiedad> propiedades) {
         this.propiedades = propiedades;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

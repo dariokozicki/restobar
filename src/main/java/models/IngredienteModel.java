@@ -23,4 +23,12 @@ public class IngredienteModel extends Model {
     public Ingrediente buscar(int id) {
         return entityManager().find(Ingrediente.class,id);
     }
+
+    @Override
+    public Ingrediente buscar(String nombre){
+        return (Ingrediente) entityManager()
+                .createQuery("From Ingrediente i where i.nombre = :nombre")
+                .setParameter("nombre",nombre)
+                .getSingleResult();
+    }
 }

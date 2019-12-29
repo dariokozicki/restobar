@@ -1,5 +1,6 @@
 package repositories.daos;
 
+import domain.dinner.food.ingredients.Ingrediente;
 import models.Model;
 
 import java.util.List;
@@ -34,5 +35,10 @@ public class DAOMySQL implements DAO {
     @Override
     public void eliminar(Object unObjeto) {
         this.model.eliminar(unObjeto);
+    }
+
+    @Override
+    public <T> T buscar(String nombre){
+        return this.model.buscar(nombre);
     }
 }

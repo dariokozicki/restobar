@@ -8,4 +8,5 @@ public interface DAO {
     public void agregar(Object unObjeto);
     public void modificar(Object unObjeto);
     public void eliminar(Object unObjeto);
+    public <T> T buscar(String nombre);
 }

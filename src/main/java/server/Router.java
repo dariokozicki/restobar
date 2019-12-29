@@ -36,8 +36,11 @@ public class Router {
                 log.println("Received api call");
             });
             Spark.path("/ingredientes",()->{
-                Spark.get("/:id", ingredienteController::mostrar);
-                Spark.get("", ingredienteController::mostrarTodos);
+                Spark.get("", ingredienteController::mostrarTodos, Router.engine);
+            });
+            Spark.path("/ingrediente", ()->{
+                Spark.get("/:id", ingredienteController::mostrar, Router.engine);
+                Spark.get("",ingredienteController::mostrarPorNombre, Router.engine);
             });
 
         });

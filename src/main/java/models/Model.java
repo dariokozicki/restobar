@@ -27,4 +27,6 @@ public abstract class Model implements WithGlobalEntityManager, TransactionalOps
     public abstract <T> List<T> buscarTodos();
 
     public abstract <T> T buscar(int id);
+
+    public abstract <T> T buscar(String nombre);
 }

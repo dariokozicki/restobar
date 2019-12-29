@@ -35,6 +35,13 @@ public class IngredienteController {
         return new ModelAndView(parametros, "ingrediente.hbs");
     }
 
+    public ModelAndView mostrarPorNombre(Request request, Response response){
+        Ingrediente ingrediente = this.repo.buscar(request.queryParams("nombre"));
+        Map<String, Object> parametros = new HashMap<>();
+        parametros.put("ingrediente", ingrediente);
+        return new ModelAndView(parametros, "ingrediente.hbs");
+    }
+
     public Response modificar(Request request, Response response){
         Ingrediente ingrediente = this.repo.buscar(new Integer(request.params("id")));
         asignarAtributosA(ingrediente, request);
