@@ -2,3 +2,5 @@
 /templateTemp/
 .classpath
 .project
+/.settings/
+/target/
