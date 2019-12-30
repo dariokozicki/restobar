@@ -1,11 +1,23 @@
  <!DOCTYPE html>
 <html>
-<head>
-<title>{{ingrediente.nombre}}</title>
-</head>
+    <head>
+        <title>{{ingrediente.nombre}}</title>
+        {{#each css}}
+            <link rel="stylesheet" href="/css/{{this}}">
+        {{/each}}
+    </head>
 
-<body style="background-color:aqua">
-<img src={{ingrediente.path}}>
-</body>
+    <body>
+        {{{body}}}
+        {{#each js}}
+            <script src="/js/{{this}}"></script>
+        {{/each}}
+        {{#if ingrediente.colorString}}
+            <img src="/images/ingredientes/vaso.png" 
+                width="100" height="100" style='background-color: {{ingrediente.colorString}}' />
+        {{else}}
+            <img src={{ingrediente.path}} width="100" height="100" />
+        {{/if}}
+    </body>
 
 </html> 

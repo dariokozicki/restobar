@@ -6,7 +6,12 @@
 
 <body style="background-color:aqua">
     {{#each ingredientes}}
-        <img src={{path}} width="50" height="50">
+        {{#if colorString}}
+            <img src="/images/ingredientes/vaso.png" 
+                width="100" height="100" style='background-color: {{colorString}}' />
+        {{else}}
+            <img src={{path}} width="100" height="100" />
+        {{/if}}
         <br/>
     {{/each}}
 </body>

@@ -2,29 +2,43 @@ package domain.dinner.food.ingredients;
 
 
 import db.EntidadPersistente;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "COMPONENTES")
-public class Componente extends EntidadPersistente {
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "ingrediente_id")
-    private Ingrediente ingrediente;
+public class Componente <T extends Ingrediente> extends EntidadPersistente {
+
+    @Any(metaColumn = @Column(name = "what_i_contain"))
+    @Cascade({org.hibernate.annotations.CascadeType.ALL})
+    @AnyMetaDef(
+            idType = "integer",
+            metaType = "string",
+            metaValues = {
+                    @MetaValue(value = "Solido", targetEntity = Solido.class),
+                    @MetaValue(value = "Liquido", targetEntity = Liquido.class)
+            })
+    @JoinColumn(name = "property_id")
+    private T ingrediente;
+
     @Column(name="POSICION")
     private Integer posicion;
 
-    public Componente(Ingrediente ingrediente, int posicion) {
+    public Componente(T ingrediente, int posicion) {
         this.ingrediente = ingrediente;
         this.posicion = posicion;
     }
+
     public Componente(){}
 
     public Double costo(){
         return ingrediente.getCosto();
     }
 
-    public Ingrediente getIngrediente(){
+    public T getIngrediente(){
         return ingrediente;
     }
 
@@ -36,4 +50,7 @@ public class Componente extends EntidadPersistente {
         this.posicion = posicion;
     }
 
+    public void setIngrediente(T ingrediente) {
+        this.ingrediente = ingrediente;
+    }
 }

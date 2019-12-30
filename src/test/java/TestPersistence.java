@@ -40,7 +40,8 @@ public class TestPersistence extends TestBasicObjects {
         EntityManagerHelper.getEntityManager().persist(lechuga);
         EntityManagerHelper.getEntityManager().persist(tomate);
         EntityManagerHelper.getEntityManager().persist(cebolla);
-        EntityManagerHelper.getEntityManager().persist(pan);
+        EntityManagerHelper.getEntityManager().persist(panSuperior);
+        EntityManagerHelper.getEntityManager().persist(panInferior);
         EntityManagerHelper.getEntityManager().persist(queso);
         EntityManagerHelper.getEntityManager().persist(aji);
         EntityManagerHelper.getEntityManager().persist(jugoDeNaranja);

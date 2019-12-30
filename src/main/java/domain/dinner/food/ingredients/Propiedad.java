@@ -9,10 +9,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name="PROPIEDADES")
 public class Propiedad extends EntidadPersistente {
+
     @Column(name="NOMBRE")
     private String nombre;
 
     public Propiedad(){}
+
     public Propiedad(String nombre) {
         this.nombre = nombre;
     }

@@ -6,24 +6,27 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="INGREDIENTES")
-public class Ingrediente extends EntidadPersistente {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Ingrediente extends EntidadPersistente {
+
     @Column(name="NOMBRE")
     private String nombre;
+
     @Column(name="COSTO")
     private Double costo;
+
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Propiedad> propiedades;
-    @Column(name="path")
-    private String path;
 
-    public Ingrediente(String nombre, Double costo, List<Propiedad> propiedades, String path) {
+    public String colorString;
+
+    public Ingrediente(String nombre, Double costo, List<Propiedad> propiedades) {
         this.nombre = nombre;
         this.costo = costo;
         this.propiedades = propiedades;
-        this.path = path;
     }
     public Ingrediente(){}
+
     public double getCosto(){
         return costo;
     }
@@ -47,11 +50,7 @@ public class Ingrediente extends EntidadPersistente {
         this.propiedades = propiedades;
     }
 
-    public String getPath() {
-        return path;
-    }
+    public abstract String getColorString();
 
-    public void setPath(String path) {
-        this.path = path;
-    }
+    public abstract void setColorString();
 }
