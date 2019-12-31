@@ -16,7 +16,7 @@ public class ComestibleModel extends Model {
 
     @Override
     public List<Comestible> buscarTodos() {
-        return entityManager().createQuery("from Ingrediente").getResultList();
+        return entityManager().createQuery("from Comestible").getResultList();
     }
 
     @Override

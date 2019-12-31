@@ -2,22 +2,25 @@
 <html>
     <head>
         <title>{{ingrediente.nombre}}</title>
-        {{#each css}}
-            <link rel="stylesheet" href="/css/{{this}}">
-        {{/each}}
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="/js/app.js"></script>
     </head>
 
-    <body>
-        {{{body}}}
-        {{#each js}}
-            <script src="/js/{{this}}"></script>
-        {{/each}}
-        {{#if ingrediente.colorString}}
-            <img src="/images/ingredientes/vaso.png" 
-                width="100" height="100" style='background-color: {{ingrediente.colorString}}' />
-        {{else}}
-            <img src={{ingrediente.path}} width="100" height="100" />
-        {{/if}}
+    <body style="background-color:#eecc77">
+        <div id="header"></div>
+        <div class="flex-container">
+            <div>
+                <p>{{ingrediente.nombre}}</p>
+                {{#if ingrediente.colorString}}
+                    <img src="/images/ingredientes/vaso.png" 
+                         height="50" style='background-color: {{ingrediente.colorString}}' />
+                {{else}}
+                    <img src={{ingrediente.path}} height="50" />
+                {{/if}}
+            </div>
+        </div>
+        <div id="footer"></div>
     </body>
 
 </html> 

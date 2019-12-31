@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>Comestibles</title>
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="/js/app.js"></script>
+    </head>
+
+<body style="background-color:#eecc77">
+    <div id="header"></div>
+    <div class="flex-container">
+    {{#each comestibles}}
+        <div>
+            <p>{{nombre}}</p>
+            {{#each componentes}}
+                {{#if ingrediente.colorString}}
+                    <img src="/images/ingredientes/vaso.png" 
+                        height="50" style='background-color: {{ingrediente.colorString}}' />
+                {{else}}
+                    <img src={{ingrediente.path}} height="50"/>
+                {{/if}}
+                <br/>
+            {{/each}}
+        </div>
+    {{/each}}
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html> 

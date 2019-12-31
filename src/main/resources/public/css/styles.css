@@ -1,0 +1,32 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #553311;
+    color: #eecc77;
+    text-align: center;
+  }
+
+  .flex-container {
+    background-image: url();
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    overflow:hidden;
+    padding:5px
+  }
+  
+  .flex-container > div {
+    background-color:#bb8855;
+    background-size:cover;
+    border-radius: 30px;
+    width: 250px;
+    margin: 0px;
+    text-align: center;
+    color: #553311;
+    margin:5px;
+    font-family: Impact, Charcoal, sans-serif;
+    line-height: 10px;
+    font-size: 30px;
+  }

@@ -23,8 +23,9 @@ public class ComestibleController extends Controller{
     public ModelAndView mostrarTodos(Request request, Response response) {
         try {
             Map<String, Object> parametros = new HashMap<>();
-            List<Comestible> comestible = this.repo.buscarTodos();
-            parametros.put("comestibles", comestible);
+            List<Comestible> comestibles = this.repo.buscarTodos();
+            comestibles.forEach(c->c.sortComponentes());
+            parametros.put("comestibles", comestibles);
             return new ModelAndView(parametros, "comestibles.hbs");
         }catch(Exception e){
             return mostrarError();
@@ -47,6 +48,7 @@ public class ComestibleController extends Controller{
         try{
             Comestible comestible = this.repo.buscar(request.queryParams("nombre"));
             Map<String, Object> parametros = new HashMap<>();
+            comestible.sortComponentes();
             parametros.put("comestible", comestible);
             return new ModelAndView(parametros, "comestible.hbs");
         }catch(Exception e){
